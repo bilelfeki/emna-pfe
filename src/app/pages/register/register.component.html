@@ -24,6 +24,14 @@
 <!-- Page content -->
 <div class="container mt--8 pb-5">
   <div
+    *ngIf="wrongCredentials"
+    class="col-lg-3 alert alert-danger"
+    role="alert"
+  >
+    User Already exist!
+  </div>
+<div class="container mt--8 pb-5">
+  <div
     *ngIf="isSuccessEnabled"
     class="col-lg-3 alert alert-success"
     role="alert"

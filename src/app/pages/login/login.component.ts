@@ -13,16 +13,23 @@ export class LoginComponent implements OnInit, OnDestroy {
   verified = false;
   shouldappear = false;
   verifyLoginCredentials() {
-    if (
-      this.email.trim() === localStorage.getItem("email").trim() &&
-      this.password.trim() === localStorage.getItem("password").trim()
-    ) {
-      this.router.navigate(["user-profile"])
+    let userList = JSON.parse(localStorage.getItem("user-list")) as any[];
+    let userindex = userList.findIndex(
+      (elem) => elem.email == this.email.trim()
+    );
+    let isUserInList = userindex != -1;
+    if (isUserInList) {
+      localStorage.setItem("name", userList[userindex]["name"]);
+      localStorage.setItem("email", userList[userindex]["email"]);
+      localStorage.setItem("password", userList[userindex]["password"]);
+      localStorage.setItem("addresse", userList[userindex]["address"]);
+      localStorage.setItem("role", userList[userindex]["role"]);
+      this.router.navigate(["user-profile"]);
     } else {
       this.shouldappear = true;
     }
   }
-  constructor(private router : Router) {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
   ngOnDestroy() {}
