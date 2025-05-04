@@ -31,8 +31,15 @@ export const ROUTES: RouteInfo[] = [
     condition:true
   },
   {
+    path: "/depenses",
+    title: "Rapport De dépense",
+    icon: "ni-money-coins text-success",
+    class: "",
+    condition:true
+  },
+  {
     path: "/budget",
-    title: "Budget Management",
+    title: "Budget Par Projet",
     icon: "ni-money-coins text-success",
     class: "",
     condition:true
@@ -87,8 +94,15 @@ export class SidebarComponent implements OnInit,AfterViewInit {
         condition:localStorage.getItem("role").trim()=="manager" ? false :true
       },
       {
-        path: "/budget",
-        title: "Budget Management",
+        path: "/depenses",
+        title: "Depenses",
+        icon: "ni-money-coins text-success",
+        class: "",
+        condition:true
+      },
+      {
+        path: "/budgets",
+        title: "Budget Par Projet",
         icon: "ni-money-coins text-success",
         class: "",
         condition:true

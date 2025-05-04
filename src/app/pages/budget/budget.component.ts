@@ -14,6 +14,8 @@ export class BudgetComponent implements OnInit {
   ngOnInit() {}
  budgets = [
     {
+      date:'04/01/2000',
+      category:'equipement',
       status: 'Approved',
       name: "Digital Marketing Strategy - Q1",
       nameDep: "Marketing",
@@ -23,6 +25,8 @@ export class BudgetComponent implements OnInit {
       remaining: 4000,
     },
     {
+      category:'equipement',
+      date:'04/01/2000',
       status: 'Approved',
       name: "Digital Campaign Optimization",
       nameDep: "Marketing",
@@ -32,6 +36,9 @@ export class BudgetComponent implements OnInit {
       remaining: 4000,
     },
     {
+      category:'equipement',
+
+      date:'04/01/2000',
       status: 'Approved',
       name: "SEO Enhancement Project",
       nameDep: "Marketing",
@@ -41,6 +48,9 @@ export class BudgetComponent implements OnInit {
       remaining: 4000,
     },
     {
+      category:'equipement',
+
+      date:'04/01/2000',
       status: 'Approved',
       name: "Content Outreach Plan",
       nameDep: "Marketing",
@@ -50,6 +60,9 @@ export class BudgetComponent implements OnInit {
       remaining: 4000,
     },
     {
+      category:'equipement',
+
+      date:'04/01/2000',
       status: 'Approved',
       name: "UX & Feature Innovation",
       nameDep: "Research & Development",
@@ -59,6 +72,9 @@ export class BudgetComponent implements OnInit {
       remaining: 15000,
     },
     {
+      category:'equipement',
+
+      date:'04/01/2000',
       status: 'Approved',
       name: "User Behavior Research",
       nameDep: "Research & Development",
@@ -68,6 +84,9 @@ export class BudgetComponent implements OnInit {
       remaining: 15000,
     },
     {
+      category:'equipement',
+
+      date:'04/01/2000',
       status: 'Approved',
       name: "Prototype Enhancement Initiative",
       nameDep: "Research & Development",
@@ -77,6 +96,9 @@ export class BudgetComponent implements OnInit {
       remaining: 15000,
     },
     {
+      category:'equipement',
+      date:'04/01/2000',
+
       status: 'Approved',
       name: "Logistics & Process Integration",
       nameDep: "Operations",
@@ -86,6 +108,8 @@ export class BudgetComponent implements OnInit {
       remaining: 20000,
     },
     {
+      category:'equipement',
+      date:'04/01/2000',
       status: 'Approved',
       name: "Warehouse Automation Setup",
       nameDep: "Operations",
@@ -94,7 +118,9 @@ export class BudgetComponent implements OnInit {
       spent: 60000,
       remaining: 20000,
     },
-    {
+    {      category:'equipement',
+
+      date:'04/01/2000',
       status: 'Approved',
       name: "Fleet Route Optimization",
       nameDep: "Operations",
@@ -104,6 +130,9 @@ export class BudgetComponent implements OnInit {
       remaining: 20000,
     },
     {
+      category:'equipement',
+
+      date:'04/01/2000',
       status: 'Approved',
       name: "Supply Chain Coordination",
       nameDep: "Operations",
@@ -113,6 +142,9 @@ export class BudgetComponent implements OnInit {
       remaining: 20000,
     },
     {
+      category:'equipement',
+
+      date:'04/01/2000',
       status: 'Approved',
       name: "Regional Distribution Upgrade",
       nameDep: "Operations",
@@ -122,6 +154,9 @@ export class BudgetComponent implements OnInit {
       remaining: 20000,
     },
     {
+      category:'equipement',
+
+      date:'04/01/2000',
       status: 'rejected',
       name: "Infrastructure & Security Upgrade",
       nameDep: "IT",
@@ -131,6 +166,9 @@ export class BudgetComponent implements OnInit {
       remaining: 18000,
     },
     {
+      date:'04/01/2025',
+      category:'equipement',
+
       status: 'rejected',
       name: "Firewall Reinforcement Project",
       nameDep: "IT",
@@ -140,6 +178,9 @@ export class BudgetComponent implements OnInit {
       remaining: 18000,
     },
     {
+      category:'equipement',
+
+      date:'04/01/2025',
       status: 'rejected',
       name: "Cloud Migration Assessment",
       nameDep: "IT",
@@ -149,6 +190,9 @@ export class BudgetComponent implements OnInit {
       remaining: 18000,
     },
     {
+      category:'equipement',
+
+      date:'04/01/2025',
       status: 'rejected',
       name: "Server Capacity Expansion",
       nameDep: "IT",
@@ -158,6 +202,9 @@ export class BudgetComponent implements OnInit {
       remaining: 18000,
     },
     {
+      category:'equipement',
+
+      date:'04/01/2025',
       status: 'rejected',
       name: "Data Compliance Initiative",
       nameDep: "IT",
@@ -167,6 +214,9 @@ export class BudgetComponent implements OnInit {
       remaining: 18000,
     },
     {
+      category:'equipement',
+
+      date:'04/01/2025',
       status: 'pending',
       name: "Network Vulnerability Audit",
       nameDep: "IT",

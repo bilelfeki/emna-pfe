@@ -1,8 +1,6 @@
 <div class="header bg-gradient-dark pb-8 pt-5 pt-md-8">
   <div class="container-fluid">
-    <div class="header-body">
-
-    </div>
+    <div class="header-body"></div>
   </div>
 </div>
 <!-- Page content -->
@@ -12,53 +10,55 @@
     <div class="col">
       <div class="card shadow">
         <div class="card-header border-0">
-          <h3 class="mb-0">Depenses</h3>
+          <h3 class="mb-0">Budget Par Projet</h3>
         </div>
         <div class="table-responsive">
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
               <tr>
-                <th scope="col">Date</th>
-                <th scope="col">Description</th>
-                <th scope="col">Category</th>
-                <th *ngIf="isFinancier" scope="col">Department</th>
-                <th scope="col">Montant</th>
-                <th   scope="col" >Status</th>
-                <th scope="col" class="text-right" >Actions</th>
+                <th scope="col">Nom</th>
+                <th *ngIf="isFinancier" scope="col">Responsable</th>
+                <th scope="col">Budget Alloué</th>
+                <th scope="col">Utilisé</th>
+
+                <th scope="col">Date Debut</th>
+                <th scope="col">Date Fin</th>
+
+                <th  scope="col" class="text-right">
+                  Actions
+                </th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let dept of budgets">
                 <th scope="row">
-                  <span class="mb-0 text-sm">{{ dept.date |date }}</span>
-                </th>
-                <th scope="row">
                   <span class="mb-0 text-sm">{{ dept.name }}</span>
                 </th>
-                <td>${{ dept.category }}</td>
                 <th *ngIf="isFinancier" scope="row">
-                  <span class="mb-0 text-sm">{{ dept.nameDep }}</span>
+                  <span class="mb-0 text-sm">{{ dept.nameRep }}</span>
                 </th>
                 <td>${{ dept.allocatedBudget | number }}</td>
-                <td  >
-                  <span
-                    class="badge"
-                    [ngClass]="{
-                      'badge-success': dept.status === 'Approved',
-                      'badge-danger': dept.status == 'rejected',
-                      'badge-warning': dept.status == 'pending'
-                    }">
-                    {{ dept.status }}
-                  </span>
-                </td>
+                <td>${{ dept.spent | number }}</td>
+                <td>${{ dept.dateDeb | date }}</td>
+                <td>${{ dept.dateFin | date }}</td>
                 <td *ngIf="isFinancier" class="text-right">
                   <div ngbDropdown placement="bottom-right">
-                    <a class="btn btn-sm btn-icon-only text-light" ngbDropdownToggle>
+                    <a
+                      class="btn btn-sm btn-icon-only text-light"
+                      ngbDropdownToggle
+                    >
                       <i class="fas fa-ellipsis-v"></i>
                     </a>
-                    <div ngbDropdownMenu class="dropdown-menu-right dropdown-menu-arrow">
-                      <a class="dropdown-item" (click)="onApprove(dept)" >Approuver</a>
-                      <a class="dropdown-item" (click)="onReject(dept)" >Rejeter</a>
+                    <div
+                      ngbDropdownMenu
+                      class="dropdown-menu-right dropdown-menu-arrow"
+                    >
+                      <a class="dropdown-item" (click)="onApprove(dept)"
+                        >Approuver</a
+                      >
+                      <a class="dropdown-item" (click)="onReject(dept)"
+                        >Rejeter</a
+                      >
                     </div>
                   </div>
                 </td>
@@ -72,13 +72,11 @@
                     </div>
                   </div>
                 </td>
-
               </tr>
             </tbody>
           </table>
         </div>
-        <div class="card-footer py-4">
-        </div>
+        <div class="card-footer py-4"></div>
       </div>
     </div>
   </div>

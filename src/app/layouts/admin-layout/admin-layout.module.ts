@@ -13,6 +13,7 @@ import { UserProfileComponent } from '../../pages/user-profile/user-profile.comp
 import { TablesComponent } from '../../pages/tables/tables.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BudgetComponent } from 'src/app/pages/budget/budget.component';
+import { BudgetProjetComponent } from 'src/app/pages/budget_projet/budget.component';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -30,7 +31,8 @@ import { BudgetComponent } from 'src/app/pages/budget/budget.component';
     TablesComponent,
     IconsComponent,
     MapsComponent,
-    BudgetComponent
+    BudgetComponent,
+    BudgetProjetComponent
   ]
 })
 
