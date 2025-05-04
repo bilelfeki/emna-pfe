@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { AfterViewInit, Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
 declare interface RouteInfo {
@@ -28,7 +28,7 @@ export const ROUTES: RouteInfo[] = [
     title: "Departements",
     icon: "ni-bullet-list-67 text-red",
     class: "",
-    condition:localStorage.getItem("role")=="manager" ? true :false
+    condition:true
   },
   {
     path: "/budget",
@@ -51,7 +51,7 @@ export const ROUTES: RouteInfo[] = [
   templateUrl: "./sidebar.component.html",
   styleUrls: ["./sidebar.component.scss"],
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent implements OnInit,AfterViewInit {
   public menuItems: any[];
   public isCollapsed = true;
 
@@ -62,5 +62,44 @@ export class SidebarComponent implements OnInit {
     this.router.events.subscribe((event) => {
       this.isCollapsed = true;
     });
+  }
+  ngAfterViewInit(): void {
+    this.menuItems=[
+      {
+        path: "/dashboard",
+        title: "Dashboard",
+        icon: "ni-tv-2 text-primary",
+        class: "",
+        condition:true
+      },
+      {
+        path: "/user-profile",
+        title: "User profile",
+        icon: "ni-single-02 text-yellow",
+        class: "",
+        condition:true
+      },
+      {
+        path: "/tables",
+        title: "Departements",
+        icon: "ni-bullet-list-67 text-red",
+        class: "",
+        condition:localStorage.getItem("role").trim()=="manager" ? false :true
+      },
+      {
+        path: "/budget",
+        title: "Budget Management",
+        icon: "ni-money-coins text-success",
+        class: "",
+        condition:true
+      },
+      {
+        path: "/register",
+        title: "Log Out",
+        icon: "ni-circle-08 text-pink",
+        class: "",
+        condition:true
+      },
+    ];
   }
 }
