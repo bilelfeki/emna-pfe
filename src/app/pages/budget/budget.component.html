@@ -89,7 +89,7 @@
     <div class="col">
       <div class="card shadow">
         <div class="card-header border-0">
-          <h3 class="mb-0">Departments Overview</h3>
+          <h3 class="mb-0">Budget Overview</h3>
         </div>
         <div class="table-responsive">
           <table class="table align-items-center table-flush">
@@ -97,80 +97,21 @@
               <tr>
                 <th scope="col">Department</th>
                 <th scope="col">Region</th>
-                <th scope="col">Total Budget</th>
-                <th scope="col">Projects</th>
-                <th scope="col">Employees</th>
+                <th scope="col">Allocated Budget</th>
+                <th scope="col">Spent</th>
+                <th scope="col">Remaining</th>
                 <th scope="col" class="text-right">Actions</th>
               </tr>
             </thead>
             <tbody>
-              <!-- Row Template -->
-              <tr>
+              <tr *ngFor="let dept of departments">
                 <th scope="row">
-                  <span class="mb-0 text-sm">Marketing</span>
+                  <span class="mb-0 text-sm">{{ dept.name }}</span>
                 </th>
-                <td>North</td>
-                <td>$50,000</td>
-                <td>4</td>
-                <td>12</td>
-                <td class="text-right">
-                  <div ngbDropdown placement="bottom-right">
-                    <a class="btn btn-sm btn-icon-only text-light" ngbDropdownToggle>
-                      <i class="fas fa-ellipsis-v"></i>
-                    </a>
-                    <div ngbDropdownMenu class="dropdown-menu-right dropdown-menu-arrow">
-                      <a class="dropdown-item" href="#">View</a>
-                      <a class="dropdown-item" href="#">Edit</a>
-                      <a class="dropdown-item" href="#">Delete</a>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"><span class="mb-0 text-sm">Research & Development</span></th>
-                <td>Central</td>
-                <td>$120,000</td>
-                <td>3</td>
-                <td>15</td>
-                <td class="text-right">
-                  <div ngbDropdown placement="bottom-right">
-                    <a class="btn btn-sm btn-icon-only text-light" ngbDropdownToggle>
-                      <i class="fas fa-ellipsis-v"></i>
-                    </a>
-                    <div ngbDropdownMenu class="dropdown-menu-right dropdown-menu-arrow">
-                      <a class="dropdown-item" href="#">View</a>
-                      <a class="dropdown-item" href="#">Edit</a>
-                      <a class="dropdown-item" href="#">Delete</a>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row"><span class="mb-0 text-sm">Operations</span></th>
-                <td>South</td>
-                <td>$80,000</td>
-                <td>5</td>
-                <td>20</td>
-                <td class="text-right">
-                  <div ngbDropdown placement="bottom-right">
-                    <a class="btn btn-sm btn-icon-only text-light" ngbDropdownToggle>
-                      <i class="fas fa-ellipsis-v"></i>
-                    </a>
-                    <div ngbDropdownMenu class="dropdown-menu-right dropdown-menu-arrow">
-                      <a class="dropdown-item" href="#">View</a>
-                      <a class="dropdown-item" href="#">Edit</a>
-                      <a class="dropdown-item" href="#">Delete</a>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-
-              <tr>
-                <th scope="row"><span class="mb-0 text-sm">IT</span></th>
-                <td>West</td>
-                <td>$100,000</td>
-                <td>6</td>
-                <td>18</td>
+                <td>{{ dept.region }}</td>
+                <td>${{ dept.allocatedBudget | number }}</td>
+                <td>${{ dept.spent | number }}</td>
+                <td>${{ dept.remaining | number }}</td>
                 <td class="text-right">
                   <div ngbDropdown placement="bottom-right">
                     <a class="btn btn-sm btn-icon-only text-light" ngbDropdownToggle>

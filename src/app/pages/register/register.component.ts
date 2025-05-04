@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
   phoneNumber = "";
   dateEmbauche = "";
   cin = "";
+  role = "";
   onCreateAccout() {
     localStorage.setItem("name", this.name);
     localStorage.setItem("email", this.email);
@@ -22,7 +23,7 @@ export class RegisterComponent implements OnInit {
     localStorage.setItem("phoneNumber", this.phoneNumber);
     localStorage.setItem("dateEmbauche", this.dateEmbauche);
     localStorage.setItem("cin", this.cin);
-    localStorage.setItem("cin", this.cin);
+    localStorage.setItem("role", this.role);
     this.isSuccessEnabled = true;
     setTimeout(() => {
       this.route.navigate(["login"]);

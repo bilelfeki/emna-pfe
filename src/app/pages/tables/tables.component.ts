@@ -19,4 +19,12 @@ export class TablesComponent implements OnInit {
     { id: 5, name: "IT", region: "West", budgetTotal: 100000, projectsCount: 6, employeesCount: 18 },
   ];
 
+   departmentExpenseData = [
+    { name: "Marketing", value: 80000 },
+    { name: "R&D", value: 120000 },
+    { name: "Operations", value: 100000 },
+    { name: "Sales", value: 60000 },
+    { name: "IT", value: 90000 },
+  ];
+
 }
